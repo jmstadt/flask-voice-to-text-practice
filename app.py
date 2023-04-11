@@ -1,17 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import speech_recognition as sr
 from flask import logging, Flask, render_template, request, flash
 import requests
 import os.path
 from flask import jsonify
-
-
-# In[2]:
 
 
 app = Flask(__name__)
@@ -57,17 +48,3 @@ def upload_file():
       <input type=submit value=Upload>
     </form>
     '''
-
-
-# In[3]:
-
-
-if __name__ == '__main__':
-    app.run()
-
-
-# In[ ]:
-
-
-
-
