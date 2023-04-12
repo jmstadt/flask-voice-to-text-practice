@@ -26,7 +26,7 @@ def upload_file():
         text = r.recognize_google(audio_data, language="en-US", show_all = False)
         #print(text)
         
-        prompt = text['alternative'][0]['transcript']
+        prompt = text
         
         return jsonify(prompt)
     return '''
