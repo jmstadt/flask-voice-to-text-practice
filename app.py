@@ -12,23 +12,17 @@ CORS(app, resources={r"/*": {"origins": "https://bot.psgroup.xyz"}})
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
-        #print(type(file))
         
         r = sr.Recognizer()
         
         audio_ex = sr.AudioFile(file)
-        #print(type(audio_ex))
         
         with audio_ex as source:
             audio_data = r.record(audio_ex)
-        #print(type(audio_data))
         
         text = r.recognize_google(audio_data, language="en-US", show_all = False)
-        #print(text)
         
-        prompt = text
-        
-        return jsonify(prompt)
+        return jsonify(text)
     return '''
     <!doctype html>
     <title>Upload new File</title>
