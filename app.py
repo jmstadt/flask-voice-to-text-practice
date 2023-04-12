@@ -23,7 +23,7 @@ def upload_file():
             audio_data = r.record(audio_ex)
         #print(type(audio_data))
         
-        text = r.recognize_google(audio_data, language='en-IN', show_all=True)
+        text = r.recognize_google(audio_data, language="en-US", show_all = False)
         #print(text)
         
         prompt = text['alternative'][0]['transcript']
