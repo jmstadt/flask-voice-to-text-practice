@@ -3,9 +3,10 @@ from flask import logging, Flask, render_template, request, flash
 import requests
 import os.path
 from flask import jsonify
-
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "https://bot.psgroup.xyz"}})
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
